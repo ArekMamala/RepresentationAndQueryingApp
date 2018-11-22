@@ -1,0 +1,47 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+body{
+margin: 0px;
+}
+
+#header{
+    background-image: url('../assets/marflix.png');
+    background-position: center top;
+    background-size: contain;
+    height: 200px;
+    width: 100%;
+
+}
+#bg{
+    background-image: url('../assets/thanos.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    top:0;
+    bottom: 0;
+    height: 80vh;
+    z-index: -10
+
+}
+#overlay{
+position: absolute;
+background-color: rgba(0, 0, 0, 0.5);
+top: 0;
+bottom: 0;
+height: 100%;
+width: 100%;
+z-index: -5;
+
+}
+#reg{
+    background-color:darkgrey;
+}
+
+#text{
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+    margin-top: 27%;
+    margin-left: 22%;
+    font-size: 30px;
+
+}
