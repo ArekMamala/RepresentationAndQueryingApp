@@ -16,8 +16,8 @@ import { MatInputModule,
   MatExpansionModule} from '@angular/material';
 import { PostCreateComponent } from './post-create/post-create.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { UsersComponent } from './users/users.component';
 import { PostEditComponent } from './post-edit/post-edit.component';
+import { MoviesComponent } from './movies/movies.component';
 
 const appRoutes: Routes = [
   {
@@ -29,8 +29,8 @@ const appRoutes: Routes = [
     component: HomePageComponent
   },
   {
-    path: 'users',
-    component: UsersComponent
+    path: 'movies',
+    component: MoviesComponent
   },
   {
     path: 'edit/:id',
@@ -49,8 +49,8 @@ const appRoutes: Routes = [
     PostDetailsComponent,
     PostCreateComponent,
     HomePageComponent,
-    UsersComponent,
-    PostEditComponent
+    PostEditComponent,
+    MoviesComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
