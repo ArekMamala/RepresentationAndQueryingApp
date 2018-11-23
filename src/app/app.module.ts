@@ -15,11 +15,26 @@ import { MatInputModule,
   MatToolbarModule,
   MatExpansionModule} from '@angular/material';
 import { PostCreateComponent } from './post-create/post-create.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { UsersComponent } from './users/users.component';
+import { PostEditComponent } from './post-edit/post-edit.component';
 
 const appRoutes: Routes = [
   {
     path: 'list',
     component: PostDetailsComponent
+  },
+  {
+    path: '',
+    component: HomePageComponent
+  },
+  {
+    path: 'users',
+    component: UsersComponent
+  },
+  {
+    path: 'edit/:id',
+    component: PostEditComponent
   },
   {
     path: 'create',
@@ -32,7 +47,10 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     PostDetailsComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    HomePageComponent,
+    UsersComponent,
+    PostEditComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

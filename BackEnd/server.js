@@ -4,15 +4,18 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://ArekMamala:arek1234>@ds063909.mlab.com:63909/arekmovieapp';
+var mongoDB = 'mongodb://ArekMamala:arek1234@ds063909.mlab.com:63909/arekmovieapp';
 mongoose.connect(mongoDB);
 
 var Schema = mongoose.Schema;
 var postSchema = new Schema({
     title: String,
-    content: String
+    content: String,
+    email: String
+    
+
 })
-var PostModel = mongoose.model('post', postSchema);
+var PostModel = mongoose.model('users', postSchema);
 
 
 //Here we are configuring express to use body-parser as middle-ware. 
@@ -27,24 +30,19 @@ app.use(function(req, res, next) {
     next();
     });
     
-app.post('/name', function(req, res){
-    res.send("Hello you sent " +
-    req.body.firstname + " " +
-    req.body.lastname);
-})
-
-app.get('/', function (req, res) {
-   res.send('Hello from Express');
-})
 
 app.post('/api/posts', function(req, res){
     console.log("post successful");
     console.log(req.body.title);
     console.log(req.body.content);
+    console.log(req.body.email);
+
 
     PostModel.create({
         title: req.body.title,
-        content: req.body.content
+        content: req.body.content,
+        email: req.body.email
+
     });
     res.send('Item added');
 
@@ -55,6 +53,32 @@ app.get('/api/posts', function(req, res){
     PostModel.find(function(err, data){
         res.json(data);
     });
+})
+
+app.get('/api/posts/:id', function(req, res){
+    console.log("rea document with id " + req.params.id);
+
+    PostModel.findById(req.params.id,
+         function(err, data){
+             res.json(data);
+         });
+
+})
+
+app.put('/api/posts/:id', function(req, res){
+    console.log(req.params.id);
+    console.log(req.body.title);
+    console.log(req.body.content);
+    console.log(req.body.email);
+
+PostModel.findByIdAndUpdate(req.params.id, req.body,
+function(err, data){
+    if(err)
+        res.send(err);
+    res.send(data);
+
+})
+
 })
 
 app.delete('/api/posts/:id', function(req, res){

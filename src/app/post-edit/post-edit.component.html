@@ -1,7 +1,12 @@
 <mat-card>
-  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+  <form (submit)="onEditPost(postForm)" #postForm="ngForm">
     <mat-form-field>
-      name<input matInput type="text" name="title" ngModel required
+      name<input
+        matInput
+        type="text"
+        name="title"
+        ngModel= {{post.title}}
+        required
         minlength="3"
         #title="ngModel">
         
@@ -9,7 +14,7 @@
         matInput
         type="text"
         name="email"
-        ngModel
+        ngModel ={{post.email}}
         required
         minlength="3"
         #title="ngModel">
@@ -21,7 +26,7 @@
         matInput
         rows="4"
         name="content"
-        ngModel
+        ngModel={{post.content}}
         required
         #content="ngModel"></textarea>
       <mat-error *ngIf="content.invalid">Please enter a post title.</mat-error>
@@ -29,6 +34,6 @@
     <button
       mat-raised-button
       color="accent"
-      type="submit">Save Post</button>
+      type="submit">update Post</button>
   </form>
 </mat-card>

@@ -1,20 +1,16 @@
-<div id="header">
-</div>
-<mat-toolbar color="primary">
-  <mat-toolbar-row id="reg">
+
+<mat-toolbar color="primary" id="col">
+  <mat-toolbar-row >
     <span class="title-center">
-      Register a User 3 months free trial.
     </span>
   </mat-toolbar-row>
-  <mat-toolbar-row id="reg">
+  <mat-toolbar-row >
     <button mat-button [routerLink]="['/create']" color="Warn">Register User</button>
     <button mat-button [routerLink]="['/list']">List Available Users</button>
+    <button mat-button [routerLink]="['/']">home Page</button>
+    <button mat-button [routerLink]="['/users']">List Available Users</button>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<div id="bg">
-  <div id="overlay">
-    <p id="text"> Bored ?? 50% Less bored with MARFLIX !!! </p>
-  </div>
-</div>
+
 <router-outlet ></router-outlet>
