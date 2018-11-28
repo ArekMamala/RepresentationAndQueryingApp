@@ -5,3 +5,28 @@ mat-form-field,
 textarea {
   width: 100%;
 }
+p{
+color: cornsilk;
+
+}
+input, textarea{
+  width: 30%;
+}
+
+#bg2{
+  background-image: url('../../assets/register.jpg');
+  background-position: center center;
+  background-size: cover;
+  margin-top: 0%;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-bottom: 0%;
+  height: 100%;
+  width: 100%;
+  }
+
+  #card{
+
+    background-color: transparent ;
+  }
+  

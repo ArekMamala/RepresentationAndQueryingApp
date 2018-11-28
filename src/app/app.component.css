@@ -1,9 +1,25 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 #col{
-    background-color: red;
-    background-size: contain;
+    background-image: url('../assets/options.jpg');
+    background-size: cover;
     position: relative;
+    height: 50px;
+    width: 100%;
+}
+#header{
+    background-image: url('/../assets/marflix.png');
+    background-position: center top;
+    background-size: contain;
+    height: 150px;
+    width: 100%;
+
+}
+#footer{
+    background-image: url('../assets/footer.png');
+    background-position: center bottom;
+    background-size: contain;
     height: 100px;
     width: 100%;
+
 }

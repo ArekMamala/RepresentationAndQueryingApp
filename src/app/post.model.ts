@@ -1,5 +1,8 @@
 export interface Post {
-  title: string;
+  fullname: string;
+  username: string;
   email: string;
-  content: string;
+  phonenumber: string;
+  description: string;
+
 }

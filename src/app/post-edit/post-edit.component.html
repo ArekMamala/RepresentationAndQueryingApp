@@ -1,11 +1,20 @@
 <mat-card>
   <form (submit)="onEditPost(postForm)" #postForm="ngForm">
     <mat-form-field>
-      name<input
+      Full Name<input
         matInput
         type="text"
-        name="title"
-        ngModel= {{post.title}}
+        name="fullname"
+        ngModel= {{post.fullname}}
+        required
+        minlength="3"
+        #title="ngModel">
+        
+        Username<input
+        matInput
+        type="text"
+        name="username"
+        ngModel ={{post.username}}
         required
         minlength="3"
         #title="ngModel">
@@ -18,18 +27,27 @@
         required
         minlength="3"
         #title="ngModel">
+        
+        Phone Number<input
+        matInput
+        type="text"
+        name="phonenumber"
+        ngModel ={{post.phonenumber}}
+        required
+        minlength="3"
+        #title="ngModel">
 
-      <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error>
+      <mat-error *ngIf="fullname.invalid">Please enter a Full-Name.</mat-error>
     </mat-form-field>
     <mat-form-field>
-      Content<textarea
+      Description<textarea
         matInput
         rows="4"
-        name="content"
-        ngModel={{post.content}}
+        name="description"
+        ngModel={{post.description}}
         required
         #content="ngModel"></textarea>
-      <mat-error *ngIf="content.invalid">Please enter a post title.</mat-error>
+      <mat-error *ngIf="content.invalid">Please enter a Full-Name.</mat-error>
     </mat-form-field>
     <button
       mat-raised-button

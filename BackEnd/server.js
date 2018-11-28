@@ -9,10 +9,11 @@ mongoose.connect(mongoDB);
 
 var Schema = mongoose.Schema;
 var postSchema = new Schema({
-    title: String,
-    content: String,
-    email: String
-    
+    fullname:String,
+    username: String,
+    email: String,
+    phonenumber: String,
+    description:String
 
 })
 var PostModel = mongoose.model('users', postSchema);
@@ -33,15 +34,21 @@ app.use(function(req, res, next) {
 
 app.post('/api/posts', function(req, res){
     console.log("post successful");
-    console.log(req.body.title);
-    console.log(req.body.content);
+    console.log(req.body.fullname);
+    console.log(req.body.username);
     console.log(req.body.email);
+    console.log(req.body.phonenumber);
+    console.log(req.body.description);
 
 
     PostModel.create({
-        title: req.body.title,
-        content: req.body.content,
-        email: req.body.email
+        fullname: req.body.fullname,
+        username: req.body.username,
+        email: req.body.email,
+        phonenumber: req.body.phonenumber,
+        description: req.body.description
+
+
 
     });
     res.send('Item added');
@@ -67,9 +74,12 @@ app.get('/api/posts/:id', function(req, res){
 
 app.put('/api/posts/:id', function(req, res){
     console.log(req.params.id);
-    console.log(req.body.title);
-    console.log(req.body.content);
+    console.log(req.body.fullname);
+    console.log(req.body.username);
     console.log(req.body.email);
+    console.log(req.body.phonenumber);
+    console.log(req.body.description);
+
 
 PostModel.findByIdAndUpdate(req.params.id, req.body,
 function(err, data){
