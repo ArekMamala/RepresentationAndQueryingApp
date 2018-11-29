@@ -2,14 +2,20 @@
 p{
 color: red;
 }
-#yo{
-
+#details{
 background-color: cornsilk;
+margin-left: 20%;
+margin-right: 20%;
 }
+
 #bg2{
 background-image: url('../../assets/users.jpg');
-height: 100%;
-background-size: cover; 
+background-size: contain;
+background-position: center center;
+position: relative;
+top:0;
+bottom: 0;
+z-index: -10
 }
 #header{
 color: white;

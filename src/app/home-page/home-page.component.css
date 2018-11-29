@@ -13,7 +13,7 @@ body{
     #footer{
         background-image: url('../../assets/footer.png');
         background-position: center bottom;
-        background-size: cover;
+        background-size: contain;
         height: 100px;
         width: 100%;
     
