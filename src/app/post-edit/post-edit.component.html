@@ -1,57 +1,20 @@
-<mat-card>
-  <form (submit)="onEditPost(postForm)" #postForm="ngForm">
-    <mat-form-field>
-      Full Name<input
-        matInput
-        type="text"
-        name="fullname"
-        ngModel= {{post.fullname}}
-        required
-        minlength="3"
-        #title="ngModel">
+<div id="bg">
+  <mat-card id="details">
+    <form (submit)="onEditPost(postForm)" #postForm="ngForm" >
+        Full Name
+        <input matInput type="text" name="fullname" ngModel={{post.fullname}} required minlength="3" #title="ngModel"><br><br> Username
         
-        Username<input
-        matInput
-        type="text"
-        name="username"
-        ngModel ={{post.username}}
-        required
-        minlength="3"
-        #title="ngModel">
-        
-        Email<input
-        matInput
-        type="text"
-        name="email"
-        ngModel ={{post.email}}
-        required
-        minlength="3"
-        #title="ngModel">
-        
-        Phone Number<input
-        matInput
-        type="text"
-        name="phonenumber"
-        ngModel ={{post.phonenumber}}
-        required
-        minlength="3"
-        #title="ngModel">
+        <input matInput type="text" name="username" ngModel={{post.username}} required minlength="3" #title="ngModel"><br><br> Email
 
-      <mat-error *ngIf="fullname.invalid">Please enter a Full-Name.</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      Description<textarea
-        matInput
-        rows="4"
-        name="description"
-        ngModel={{post.description}}
-        required
-        #content="ngModel"></textarea>
-      <mat-error *ngIf="content.invalid">Please enter a Full-Name.</mat-error>
-    </mat-form-field>
-    <button
-      mat-raised-button
-      color="accent"
-      type="submit">update Post</button>
-  </form>
-</mat-card>
+        <input matInput type="text" name="email" ngModel={{post.email}} required minlength="3" #title="ngModel"><br><br> Phone Number
+        <input matInput type="text" name="phonenumber" ngModel={{post.phonenumber}} required minlength="3" #title="ngModel">
+
+      <mat-form-field>
+        Description
+        <input matInput rows="4" name="description" ngModel={{post.description}} required #content="ngModel">
+        <mat-error *ngIf="content.invalid">Please enter a Full-Name.</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit">update Post</button>
+    </form>
+  </mat-card>
+</div>

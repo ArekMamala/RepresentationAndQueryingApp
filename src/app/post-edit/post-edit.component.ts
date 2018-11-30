@@ -26,7 +26,7 @@ post: any =[];
 
   onEditPost(form : NgForm){
     this.service.updatePost(this.post._id, form.value.fullname, form.value.username, 
-      form.value.email, form.value.phonenumber,form.value.description).subscribe(() =>{
+      form.value.email, form.value.phonenumber, form.value.description).subscribe(() =>{
 
         this.router.navigate(['/list']);
       });
