@@ -1,0 +1,12 @@
+Data Representation And Querying
+
+Application: Marflix
+Name: Arkadiusz Mamala
+Gmit Student Number: G00349088
+
+GitHub repository: https://github.com/ArekMamala/RepresentationAndQueryingApp
+
+GitHub Wiki: https://github.com/ArekMamala/RepresentationAndQueryingApp/wiki
+
+
+
